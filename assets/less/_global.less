@@ -2,11 +2,40 @@ img {
 	padding-bottom: 0.3em;
 }
 
-.master-header {
+#master-header {
+	width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    font: 0/0 serif;
+    text-shadow: none;
+    color: transparent;
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+#master-header .inner {
+	padding-top: 31.35%; /* height/width of image */
+    display: block;
+    height: 0;
+}
+
+#master-header {
 	background-image: url('../img/header_linje19.jpg');
-	background-size: cover;
-	height: 425px;
-	background-repeat: no-repeat;
+}
+
+/* Small screens ----------- */
+@media only screen and (max-width: 320px) {
+	#master-header {
+		background-image: url('../img/header_linje19-320.jpg');
+	}
+}
+
+/* Medium screens ----------- */
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+	#master-header {
+		background-image: url('../img/header_linje19-768.jpg');
+	}
 }
 
 a:hover {
