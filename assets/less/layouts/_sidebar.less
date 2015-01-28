@@ -1,55 +1,59 @@
 .sidebar {
-  .make-sm-column(@sidebar-sm-columns);
-  padding-top: 46px;
-}
+	.make-sm-column(@sidebar-sm-columns);
+	padding-top: 46px;
 
-.sidebar > .widget {
-	max-width: 250px;
-	padding-bottom: 50px;
-}
+	> .widget {
+		max-width: 250px;
+		padding-bottom: 50px;
+	}
 
-.sidebar > .widget:first-child {
-	padding-bottom: 15px;
-}
+	> .widget:first-child {
+		padding-bottom: 15px;
+	}
 
-.sidebar h3 {
-	margin-top: 0;
-}
+	h3 {
+		margin-top: 0;
+	}
 
-.widget_gce_widget h3 {
-	border: @brand-info 1px solid;
-	background-color: @brand-info;
-	padding: @sidebar-header-padding 0;
-	margin-bottom: 0;
-	text-align: center;
-	font-size: @font-size-small;
-	color: #fff;
-}
+	.widget {
+		h3 {
+			border: @brand-info 1px solid;
+			background-color: @brand-info;
+			padding: @sidebar-header-padding 0;
+			margin-bottom: 0;
+			text-align: center;
+			font-size: @font-size-small;
+			color: #fff;
+		}
 
-.gce-widget-list {
-	border: @gray-lighter 2px solid;
-	border-top: none;
-	min-height: 150px;
-}
+		div.gce-widget-list, div.sidebar-box {
+			border: @gray-lighter 2px solid;
+			border-top: none;
+			min-height: 150px;
+		}
+	}
 
-.gce-feed {
-	padding: @padding-large-vertical @padding-small-horizontal;
-	min-height: @sidebar-box-height;
-}
+	.gce-feed {
+		padding: @padding-large-vertical @padding-small-horizontal;
+		min-height: @sidebar-box-height;
+	}
 
-.gce-list-event {
-	background-color: @body-bg;
-}
+	.gce-list-event {
+		background-color: @body-bg;
+	}
 
-.gce-link {
-	float: right;
-}
+	.gce-link {
+		float: right;
+	}
 
-#social-media {
-	font-size: 220%;
-}
+	#social-media {
+		font-size: 220%;
+	}
 
-#social-media > a {
-	padding-right: 25px;
-	color: @text-color;
+	#social-media > a {
+		padding-right: 25px;
+		color: @text-color;
+	}
 }
+	
+
