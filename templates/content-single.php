@@ -36,7 +36,7 @@
 				while ($my_query->have_posts()) : $my_query->the_post(); ?>
 					
 						<div class="col-md-3">
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( array(150, 150) ); ?></a>
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'thumbnail' ); ?></a>
 							<br />
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 						</div>					
