@@ -5,7 +5,7 @@
 	  <?php if ( ! post_password_required() && ! is_attachment() ) : the_post_thumbnail(); endif; ?>
 	  <p><?php get_template_part('templates/entry-meta'); ?></p>
 	</header>
-	<div class="entry-content">
+	<div class="entry-content clearfix">
 	  <?php the_content(); ?>
 	</div>
 	<?php
@@ -36,7 +36,27 @@
 				while ($my_query->have_posts()) : $my_query->the_post(); ?>
 					
 						<div class="col-md-3">
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'thumbnail' ); ?></a>
+							<?php
+								if ( has_post_thumbnail() ) {
+									the_post_thumbnail( 'thumbnail' );
+								} else {
+									// No post thumbnail, try attachments instead.
+									$images = get_posts(
+										array(
+											'post_type'      => 'attachment',
+											'post_mime_type' => 'image',
+											'post_parent'    => $post->ID,
+											'posts_per_page' => 1, /* Save memory, only need one */
+										)
+									);
+
+									if ( $images ) {
+										$image_array = wp_get_attachment_image_src( $images[0]->ID, 'thumbnail' );
+										echo '<img src="' . $image_array[0] . '" alt="" />';
+									}
+								}
+							?>
+
 							<br />
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 						</div>					
